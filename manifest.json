@@ -1,0 +1,9 @@
+{
+  "id": "daily-calendar",
+  "name": "Daily Calendar",
+  "version": "0.1.0",
+  "minAppVersion": "1.0.0",
+  "description": "사이드바 캘린더로 데일리 노트를 생성/관리하는 플러그인",
+  "author": "bapuri",
+  "isDesktopOnly": false
+}

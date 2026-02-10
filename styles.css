@@ -1,0 +1,103 @@
+/**
+ * Daily Calendar 스타일
+ *
+ * Obsidian의 CSS 변수를 사용해서 사용자 테마에 자동 적응한다.
+ * --text-normal, --background-modifier-hover 등은 옵시디언이 제공하는 변수.
+ * 어떤 테마를 쓰든 (다크/라이트) 자연스럽게 보인다.
+ */
+
+/* 전체 래퍼 */
+.daily-calendar {
+  padding: 8px;
+}
+
+/* 헤더: [<] 2026년 02월 [>] */
+.daily-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.daily-calendar-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.daily-calendar-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--text-normal);
+}
+
+.daily-calendar-nav:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* 달력 테이블 */
+.daily-calendar-grid {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.daily-calendar-grid th {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 4px 0;
+}
+
+/* 날짜 셀 */
+.daily-calendar-day {
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.daily-calendar-day:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* 오늘 날짜 강조 */
+.daily-calendar-today {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.daily-calendar-today:hover {
+  background: var(--interactive-accent-hover);
+  color: var(--text-on-accent);
+}
+
+/* 노트가 있는 날짜 — 숫자 아래에 작은 점 표시 */
+.daily-calendar-has-note {
+  position: relative;
+}
+
+.daily-calendar-has-note::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--interactive-accent);
+  margin: 1px auto 0;
+}
+
+/* 오늘 + 노트 있는 경우: 점 색상을 흰색으로 */
+.daily-calendar-today.daily-calendar-has-note::after {
+  background: var(--text-on-accent);
+}
+
+/* 빈 셀 (이전/다음 달) */
+.daily-calendar-empty {
+  padding: 4px;
+}
